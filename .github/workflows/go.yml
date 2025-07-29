@@ -19,3 +19,5 @@ jobs:
           go-version: ${{ matrix.go-version }}
       - name: Run test
         run: go run ./run.go
+      - name: Run bash
+        run: ./run.sh
