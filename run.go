@@ -81,9 +81,10 @@ func run(ctx context.Context) error {
 		return fmt.Errorf("verifying token: %w", err)
 	}
 	var claims struct {
-		Actor      string `json:"actor"`
-		Ref        string `json:"ref"`
-		Repository string `json:"repository"`
+		Actor       string `json:"actor"`
+		Environment string `json:"environment"`
+		Ref         string `json:"ref"`
+		Repository  string `json:"repository"`
 	}
 	if err := idToken.Claims(&claims); err != nil {
 		return fmt.Errorf("claims: %w", err)
