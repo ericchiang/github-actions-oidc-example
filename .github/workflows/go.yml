@@ -6,7 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
+      id-token: write # Allow the action to request an ID token.
+      contents: read # With no permissions, the ID token may be empty. Give it something.
     strategy:
       matrix:
         go-version: ["1.24.x"]

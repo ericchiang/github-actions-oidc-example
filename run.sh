@@ -2,7 +2,7 @@
 
 curl -s \
 	-H "Authorization: Bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}" \
-	"$ACTIONS_ID_TOKEN_REQUEST_URL?audience=oblique" | \
+	"${ACTIONS_ID_TOKEN_REQUEST_URL}?audience=oblique" | \
 	jq '.value' | \
 	awk -F'.' '{print $2}' | \
 	tr '_-' '/+' | \
